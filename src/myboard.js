@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Chess } from 'chess.js';
 import axios from 'axios';
 import React from 'react';
@@ -13,7 +13,8 @@ export default function Myboard({ boardWidth }) {
     const [boardOrientation, setBoardOrientation] = useState('white');
     const [currentTimeout, setCurrentTimeout] = useState(undefined);
     const [maxtime, setmaxtime] = useState(5);
-
+    
+    
     
     function safeGameMutate(modify) {
         setGame((g) => {
@@ -64,6 +65,23 @@ export default function Myboard({ boardWidth }) {
         return true;
       }
 
+
+      //board size stuff
+      const [boardSize,detectResize] = useState(Math.min(window.innerHeight,window.innerWidth)*.75);
+      const detectSize = () => {
+        detectResize(Math.min(window.innerHeight,window.innerWidth)*.85)
+      }
+      useEffect(() => {
+        window.addEventListener('resize',detectSize)
+
+        return () => {
+          window.removeEventListener('resize',detectSize)
+        }
+      }, [boardSize])
+
+
+
+
       return (
         <div class="container">
           <div class=".container themed-grid-col">
@@ -72,7 +90,7 @@ export default function Myboard({ boardWidth }) {
                 id="PlayVsRandom"
                 animationDuration={200}
                 boardOrientation={boardOrientation}
-                boardWidth={boardWidth}
+                boardWidth={boardSize}
                 customArrows={arrows}
                 position={game.fen()}
                 onPieceDrop={onDrop}
