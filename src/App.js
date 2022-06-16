@@ -48,7 +48,7 @@ function Navbarr() {
                 <a class="nav-link" href="/playchess">Play Chess</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="/">Resume</a>
+                <a class="nav-link" href="/resume">Resume</a>
               </li>
               
             </ul>
@@ -57,6 +57,13 @@ function Navbarr() {
         </div>
     </nav>
   );
+}
+
+function Resume() {
+  //TODO: restructure this to resize for each screen
+  return(
+    <iframe src="https://drive.google.com/file/d/1OPIhLf2oaNTiij80RCf8XDfKUmaNXW7z/preview" width="640" height="480" allow="autoplay"></iframe>
+  )
 }
 
 
@@ -74,6 +81,8 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path='/playchess' element={<Myboard />} />
+
+          <Route path='/resume' element={<Resume />} />
 
         </Routes>
 
