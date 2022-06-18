@@ -1,33 +1,36 @@
 function Home(){
     return(
         <div>
-            <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-                <div class="col-md-5 p-lg-5 mx-auto my-5">
-                <h1 class="display-4 fw-normal">Play My Chess AI!</h1>
-                <p class="lead fw-normal">I built a chess AI in python and incorporated it into a GCP-functions API</p>
-                <a class="btn btn-outline-secondary" href='/playchess'>Play it here!</a>
+            <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+                <div className="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 className="display-4 fw-normal">Play My Chess AI!</h1>
+                <p className="lead fw-normal">I built a chess AI in python and incorporated it into a GCP-functions API</p>
+                <a className="btn btn-outline-secondary" href='/playchess'>Play it here!</a>
                 </div>
-                <div class="product-device shadow-sm d-none d-md-block"></div>
-                <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+                <div className="product-device shadow-sm d-none d-md-block"></div>
+                <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
             </div>
 
-            <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-                <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">Data Science Projects</h2>
-                    <p class="lead">Coming Soon</p>
+            <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center text-white bg-dark">
+                <div className="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 className="display-4 fw-normal">Data Science Project</h1>
+                <p className="lead fw-normal">Coming Soon!</p>
+                {/* <a className="btn btn-outline-secondary" href='/playchess'>Play it here!</a> */}
                 </div>
-                <div class="bg-light shadow-sm mx-auto" styles="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-                </div>
-                <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 p-3">
-                    <h2 class="display-5">Resume</h2>
-                    <p class="lead">WIP</p>
-                    <a class="btn btn-outline-secondary" href='/resume'>Click Here!</a>
-                </div>
-                <div class="bg-dark shadow-sm mx-auto" styles="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-                </div>
+                <div className="product-device shadow-sm d-none d-md-block"></div>
+                <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
             </div>
+
+            <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+                <div className="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 className="display-4 fw-normal">Resume</h1>
+                {/* <p className="lead fw-normal">I built a chess AI in python and incorporated it into a GCP-functions API</p> */}
+                <a className="btn btn-outline-secondary" href='/playchess'>Click Here</a>
+                </div>
+                <div className="product-device shadow-sm d-none d-md-block"></div>
+                <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+            </div>
+
         </div>
     );
 }
