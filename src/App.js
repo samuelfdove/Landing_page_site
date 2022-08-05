@@ -83,7 +83,7 @@ function Resume() {
   }, [windowDimensions])
 
   return(
-    <iframe src="https://drive.google.com/file/d/1OPIhLf2oaNTiij80RCf8XDfKUmaNXW7z/preview" width={windowDimensions.winWidth} height={windowDimensions.winHeight} allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1Bxi6g5Bl8fyLWFcpvivkWMn8Fly72EdT/preview" width={windowDimensions.winWidth} height={windowDimensions.winHeight} allow="autoplay"></iframe>
   )
 }
 
