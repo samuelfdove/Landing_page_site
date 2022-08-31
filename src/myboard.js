@@ -3,6 +3,7 @@ import { Chess } from 'chess.js';
 import axios from 'axios';
 import React from 'react';
 import { Chessboard } from 'react-chessboard';
+import githublogo from './GitHub-Mark-64px.png';
 
 
 export default function Myboard({ boardWidth }) {
@@ -13,6 +14,7 @@ export default function Myboard({ boardWidth }) {
     const [boardOrientation, setBoardOrientation] = useState('white');
     const [currentTimeout, setCurrentTimeout] = useState(undefined);
     const [maxtime, setmaxtime] = useState(5);
+    console.log(githublogo);
     
     
     
@@ -102,10 +104,10 @@ export default function Myboard({ boardWidth }) {
                 ref={chessboardRef}
               />
               <br></br>
-              <button
+              <a
                 type='button'
-                class = 'btn btn-light'
-                className="rc-button"
+                class = 'btn btn-outline-dark'
+                // className="rc-button"
                 onClick={() => {
                   safeGameMutate((game) => {
                     game.undo();
@@ -116,12 +118,12 @@ export default function Myboard({ boardWidth }) {
                 }}
               >
               undo
-              </button>
+              </a>
 
-              <button
+              <a
                 type='button'
-                class = 'btn btn-light'
-                className="rc-button"
+                class = 'btn btn-outline-dark'
+                // className="rc-button"
                 onClick={() => {
                   safeGameMutate((game) => {
                     game.reset();
@@ -131,11 +133,20 @@ export default function Myboard({ boardWidth }) {
                 }}
               >
               reset
-              </button>
+              </a>
+              <br></br><br></br>
               <form class='bd-example' action="javascript:void(0);">
-                <label for="depthtime">Max AI time: </label>
+                <label for="depthtime">Max AI time:  </label>
                 <input type="number" id="depthtime" value={maxtime} onChange={(e)=>setmaxtime(e.target.value)}></input>
               </form>
+              <br></br>
+              <a type="button" class='btn btn-outline-dark' href="https://github.com/samuelfdove/chessaiapi">View this on GitHub
+              </a>
+              <div>
+              <image src={githublogo} width={100} height={50}/>
+              <image src={require('./GitHub-Mark-64px.png')} />
+              </div>
+              
             </div>
           </div>
         </div>
