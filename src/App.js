@@ -2,12 +2,20 @@ import React from 'react';
 import firebase from 'firebase/compat/app'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {Helmet} from 'react-helmet';
-import Myboard from './myboard';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home'
 import { useEffect, useRef, useState } from 'react';
+
+import Myboard from './myboard';
+import Home from './Home';
+import PoolAI from './PoolAI';
+import Navbarr from './Navbarr';
+import Resume from './Resume';
+import Userdataset from './Userdataset';
+import Piecedataset from './Piecedataset';
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyB3WWYgfm-j-gBEbrSp5H0EBWVN-w1KIFE",
@@ -32,65 +40,7 @@ function Header() {
   )
 }
 
-function Navbarr() {
-  return(
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Samuel Dove</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarsExample04">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/playchess">Play Chess</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/resume">Resume</a>
-              </li>
-              
-            </ul>
-            
-          </div>
-        </div>
-    </nav>
-  );
-}
-
-function Resume() {
-  //TODO: restructure this to resize for each screen
-
-  const [windowDimensions,detectResize] = useState({
-    winWidth: window.innerWidth,
-    winHeight: window.innerHeight,
-  });
-  const detectSize = () => {
-    detectResize({
-      winWidth: window.innerWidth,
-      winHeight: window.innerHeight,
-    })
-  }
-  useEffect(() => {
-    window.addEventListener('resize',detectSize)
-
-    return () => {
-      window.removeEventListener('resize',detectSize)
-    }
-  }, [windowDimensions])
-
-  return(
-    <iframe src="https://drive.google.com/file/d/1Bxi6g5Bl8fyLWFcpvivkWMn8Fly72EdT/preview" width={windowDimensions.winWidth} height={windowDimensions.winHeight} allow="autoplay"></iframe>
-  )
-}
-
-
 function App() {
-
-
 
   return (
     <Router>
@@ -104,6 +54,12 @@ function App() {
           <Route path='/playchess' element={<Myboard />} />
 
           <Route path='/resume' element={<Resume />} />
+
+          <Route path='/poolai' element={<PoolAI />} />
+
+          <Route path='/piecedataset' element={<Piecedataset />} />
+
+          <Route path='/userdataset' element={<Userdataset />} />
 
         </Routes>
 
