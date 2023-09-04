@@ -24,6 +24,9 @@ function Navbarr() {
               <li class="nav-item">
                 <a class="nav-link" href="https://www.linkedin.com/in/samuel-dove-6bba62155/">LinkedIn</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://samuelfdove.github.io/chessgame-ws-client/">Multiplayer Chess</a>
+              </li>
               {/* <li class="nav-item">
                 <a class="nav-link" href="/resume">Resume</a>
               </li> */}
@@ -51,7 +54,7 @@ function Navbarr2() {
           >
             {/* <Nav.Link href="/">Home</Nav.Link> */}
             <Nav.Link href="/playchess">Chess_AI</Nav.Link>
-            <NavDropdown title="Current Projects" id="navbarScrollingDropdown">
+            <NavDropdown title="Current_Projects" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/poolai">Pool AI</NavDropdown.Item>
               <NavDropdown.Item href="/piecedataset">Chess Move Analysis</NavDropdown.Item>
               <NavDropdown.Item href="/userdataset">Inactive User Analysis</NavDropdown.Item>
@@ -59,6 +62,9 @@ function Navbarr2() {
             </NavDropdown>
             <Nav.Link href="https://www.linkedin.com/in/samuel-dove-6bba62155/">
               LinkedIn
+            </Nav.Link>
+            <Nav.Link href="https://samuelfdove.github.io/chessgame-ws-client/">
+              Multiplayer_Chess
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
